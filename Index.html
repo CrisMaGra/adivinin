@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juega a adivinar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="titulo">ADIVININ NIVEL 1</h1>
+    </header>
+    <main id="general"> 
+        <section id="sectAdivinar">
+            <h3>Adivina la siguiente palabra:</h3>
+            <div id="pista"></div><br>
+            <div id="frase"></div><br>
+            <div>
+                <input type="text" id="letra" placeholder="Escribe la letra o frase">
+                <br><br>
+                <input type="button" id="botonComprobar" value="COMPROBAR">
+            </div>
+            <br>
+            <div id="vida"></div><br>
+            <div id="comprobador"></div>
+            <div id="divBotones"></div>
+        </section>
+        <section id="sectCanvas">
+            <div id="mensaje"></div>
+            <div id="dibujo">
+                <canvas id="elCanvas">
+                    Tu navegador no acepta Canvas
+                </canvas>
+            </div>
+        </section>
+    </main>
+    <footer>
+        
+    </footer>
+    <script src="ahorcado.js"></script>
+    <script>iniciar()</script>
+</body>
+</html>

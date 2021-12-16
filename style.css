@@ -1,0 +1,141 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    text-align: center;
+    padding: 15px;
+}
+header{
+    background-color: #385c9e;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    height: 150px;
+}
+#general{
+    height: 450px;
+    text-align: center;
+}
+footer{
+    position: relative;
+    background-image: url("images/cielo.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: 100% 100%;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    height: 280px;
+}
+
+input[type="button"] {
+    background-color: #385c9e;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10%;
+    
+}
+
+input[type="button"]:hover {
+    cursor: pointer;
+    transition-duration: 0.5s;
+    background-color: steelblue;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transform: translateY(-0.3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
+}
+input[type="text"] {
+    height: 15px;
+    width: 300px;
+    background-color: #385c9e;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 2.5%;
+}
+button{
+    background-color: #385c9e;
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10%;
+}
+button:hover{
+    cursor: pointer;
+    transition-duration: 0.5s;
+    background-color: steelblue;
+    color: white;
+    padding: 6px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transform: translateY(-0.3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
+}
+#sectAdivinar{
+    padding: 15px;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: left;
+    width: 50%;
+}
+#sectCanvas{
+    padding: 15px;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: right;
+    vertical-align: top;  
+}
+#dibujo{
+    padding-top: 10px;
+    vertical-align: top;
+    display: inline-block;
+    box-sizing: border-box;   
+}
+#elCanvas{
+    border: 2px solid steelblue;
+    width: 450px;
+    height: 350px;
+}
+#frase{
+    font-size: 25px;
+}
+#pista{
+    font-size: 18px;
+}
+#mensaje{
+    padding-top: 10px;
+    vertical-align: top;    
+    display: inline-block;
+    box-sizing: border-box;
+}
+#imgFelicidades{
+    border: 2px solid steelblue;
+    width: 450px;
+    height: 350px;
+}
