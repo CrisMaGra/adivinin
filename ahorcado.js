@@ -8,7 +8,14 @@ let palabraOc = "";
 let palabraAdi = "";
 let bandera = 1;
 document.getElementById("botonComprobar").addEventListener("click", comprobar);
+document.getElementById("letra").addEventListener("keydown", pressEnter);
 
+function pressEnter(event) {
+  if (event.keyCode == 13) {
+    document.getElementById("botonComprobar").focus();
+  }
+
+}
 function pistas(pista) {
     switch (pista) {
         case "REGLA":
@@ -72,7 +79,7 @@ function pistas(pista) {
             document.getElementById("pista").innerHTML = "Sobre ella se colocan ollas, sartenes. Lo que si hay que tener cuidado con el fuego, muy fuerte quema tu comida.";
             break;
         case "LAVARROPAS":
-            document.getElementById("pista").innerHTML = "O lo cargas por arriba o por el frente, siempre con ropa. Y limpia saldra.";
+            document.getElementById("pista").innerHTML = "O lo cargas por arriba o por el frente, siempre con ropa. Y limpia saldrá.";
             break;
         case "PERROS":
             document.getElementById("pista").innerHTML = "Son muy buenos compañeros, fieles y con 4 patas. Algunos son traviesos y ladran mucho.";
@@ -94,11 +101,11 @@ function pistas(pista) {
 }
 
 function comprobar() {
+    document.getElementById("letra").focus();
     let letra = document.getElementById("letra").value.toUpperCase().trim();
     if (letra != "") {
         if (letra == palabraOc) {
             document.getElementById("frase").innerHTML = palabraOc;
-            //document.getElementById("mensaje").innerHTML = "<h1>¡¡¡FELICIDADES!!!</h1>";
             felicidades();
             siguienteBoton();
         } else {
@@ -114,23 +121,23 @@ function comprobar() {
                 vidas--;
                 document.getElementById("vida").innerHTML = "Vidas: " + vidas;
                 dibujar();
+                document.getElementById("letra").focus();
             }
             palabraAdi = nuevo;
             document.getElementById("frase").innerHTML = palabraAdi;
             if (vidas == 0) {
                 document.getElementById("comprobador").innerHTML = "<h1>¡¡¡LO SIENTO, PERDISTE!!!</h1>";
                 perdiste();
-
+                document.getElementById("nuevo").focus();
             }
             if (palabraAdi.search("_") == -1) {
-                //document.getElementById("mensaje").innerHTML = "<h1>¡¡¡FELICIDADES!!!</h1>";
                 felicidades();
                 siguienteBoton();
             }
         }
     }
     document.getElementById("letra").value = "";
-    document.getElementById("letra").focus();
+    document.getElementById("siguiente").focus();
 }
 
 function siguienteBoton() {
@@ -145,6 +152,7 @@ function siguienteBoton() {
 }
 
 function limpiar() {
+    eliminoCanvasImg()
     document.getElementById("siguiente").remove();
     document.getElementById("frase").innerHTML = "";
     document.getElementById("mensaje").innerHTML = "";
@@ -162,11 +170,12 @@ function limpiar() {
     }
     creoCanvas();
 }
-function felicidades(){
+
+function felicidades() {
     let imageFelicidades = new Image();
     imageFelicidades.setAttribute("id", "imgFelicidades");
     imageFelicidades.src = "/images/felicidades.png";
-    document.getElementById("mensaje").appendChild(imageFelicidades);
+    document.getElementById("dibujo").appendChild(imageFelicidades);
 }
 
 function perdiste() {
@@ -181,6 +190,7 @@ function perdiste() {
 }
 
 function iniciar() {
+    document.getElementById("letra").focus();
     document.getElementById("vida").innerHTML = "Vidas: " + vidas;
     let indiceAleatorio = Math.floor(Math.random() * palabras.length)
     palabraOc = palabras[indiceAleatorio];
@@ -192,6 +202,7 @@ function iniciar() {
 }
 
 function lvl2() {
+    document.getElementById("letra").focus();
     document.getElementById("titulo").innerHTML = "ADIVININ NIVEL 2";
     document.getElementById("vida").innerHTML = "Vidas: " + vidas;
     let indiceAleatorio = Math.floor(Math.random() * palabras2.length)
@@ -204,6 +215,7 @@ function lvl2() {
 }
 
 function lvl3() {
+    document.getElementById("letra").focus();
     document.getElementById("titulo").innerHTML = "ADIVININ NIVEL 3";
     document.getElementById("vida").innerHTML = "Vidas: " + vidas;
     let indiceAleatorio = Math.floor(Math.random() * palabras3.length)
@@ -216,6 +228,7 @@ function lvl3() {
 }
 
 function lvl4() {
+    document.getElementById("letra").focus();
     document.getElementById("titulo").innerHTML = "ADIVININ NIVEL 4";
     document.getElementById("vida").innerHTML = "Vidas: " + vidas;
     let indiceAleatorio = Math.floor(Math.random() * palabras4.length)
@@ -228,6 +241,7 @@ function lvl4() {
 }
 
 function lvl5() {
+    document.getElementById("letra").focus();
     document.getElementById("titulo").innerHTML = "ADIVININ NIVEL 5";
     document.getElementById("vida").innerHTML = "Vidas: " + vidas;
     let indiceAleatorio = Math.floor(Math.random() * palabras5.length)
@@ -244,6 +258,10 @@ function creoCanvas() {
     _canvas.setAttribute("id", "elCanvas");
     document.getElementById("dibujo").appendChild(_canvas);
 
+}
+
+function eliminoCanvasImg(){
+    document.getElementById("imgFelicidades").remove();
 }
 
 function eliminoCanvas() {

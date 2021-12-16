@@ -1,19 +1,19 @@
-*{
-    font-family: 'Courier New', Courier, monospace;
-}
+
 body{
+    font-family: 'Irish Grover', cursive;
     text-align: center;
     padding: 15px;
 }
 header{
+    font-family: 'Irish Grover', cursive;
     background-color: #385c9e;
     border: none;
     color: white;
-    padding: 15px 15px;
+    padding: 15px;
     text-align: center;
     text-decoration: none;
-    font-size: 30px;
-    height: 150px;
+    font-size: 80px;
+    height: 120px;
 }
 #general{
     height: 450px;
@@ -33,7 +33,9 @@ footer{
     font-size: 30px;
     height: 280px;
 }
-
+h3{
+    font-size: 40px;
+}
 input[type="button"] {
     background-color: #385c9e;
     border: none;
@@ -46,7 +48,6 @@ input[type="button"] {
     border-radius: 10%;
     
 }
-
 input[type="button"]:hover {
     cursor: pointer;
     transition-duration: 0.5s;
@@ -123,10 +124,10 @@ button:hover{
     height: 350px;
 }
 #frase{
-    font-size: 25px;
+    font-size: 30px;
 }
 #pista{
-    font-size: 18px;
+    font-size: 25px;
 }
 #mensaje{
     padding-top: 10px;
