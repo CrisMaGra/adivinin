@@ -7,15 +7,19 @@ let palabras5 = Array("RECREO", "MOCHILA", "CARTUCHERA", "CARPETA", "REGLA");
 let palabraOc = "";
 let palabraAdi = "";
 let bandera = 1;
-document.getElementById("botonComprobar").addEventListener("click", comprobar);
-document.getElementById("letra").addEventListener("keydown", pressEnter);
+
+(function atento() {
+    document.getElementById("botonComprobar").addEventListener("click", comprobar);
+    document.getElementById("letra").addEventListener("keydown", pressEnter);
+})();
 
 function pressEnter(event) {
-  if (event.keyCode == 13) {
-    document.getElementById("botonComprobar").focus();
-  }
+    if (event.keyCode == 13) {
+        document.getElementById("botonComprobar").focus();
+    }
 
 }
+
 function pistas(pista) {
     switch (pista) {
         case "REGLA":
@@ -117,12 +121,14 @@ function comprobar() {
                     nuevo = nuevo + palabraAdi[i * 2] + " ";
                 }
             }
-            if (nuevo == palabraAdi) {
+            if (nuevo == palabraAdi) { //Resta vida y dibuja.
                 vidas--;
+                elimLife();
                 document.getElementById("vida").innerHTML = "Vidas: " + vidas;
                 dibujar();
                 document.getElementById("letra").focus();
             }
+    
             palabraAdi = nuevo;
             document.getElementById("frase").innerHTML = palabraAdi;
             if (vidas == 0) {
@@ -138,6 +144,19 @@ function comprobar() {
     }
     document.getElementById("letra").value = "";
     document.getElementById("siguiente").focus();
+}
+
+function life() {
+    for (let index = 0; index < vidas; index++) {
+        corazon = document.createElement("img");
+        corazon.setAttribute("id", "corazoncito" + [index]);
+        corazon.src = "images/corazon.png";
+        document.getElementById("lifes").appendChild(corazon);
+    }
+}
+
+function elimLife() {
+    document.getElementById("corazoncito" + [vidas]).remove();
 }
 
 function siguienteBoton() {
@@ -174,13 +193,13 @@ function limpiar() {
 function felicidades() {
     let imageFelicidades = new Image();
     imageFelicidades.setAttribute("id", "imgFelicidades");
-    imageFelicidades.src = "/images/felicidades.png";
+    imageFelicidades.src = "images/felicidades.png";
     document.getElementById("dibujo").appendChild(imageFelicidades);
 }
 
 function perdiste() {
-    document.getElementById("letra").remove();
-    document.getElementById("botonComprobar").remove();
+    document.getElementById("boxComprobador").remove();
+    document.getElementById("frase").remove();
     let botonNuevo = document.createElement("button");
     let textoNuevo = document.createTextNode("NUEVO JUEGO");
     botonNuevo.setAttribute("id", "nuevo");
@@ -192,6 +211,7 @@ function perdiste() {
 function iniciar() {
     document.getElementById("letra").focus();
     document.getElementById("vida").innerHTML = "Vidas: " + vidas;
+    life();
     let indiceAleatorio = Math.floor(Math.random() * palabras.length)
     palabraOc = palabras[indiceAleatorio];
     for (let i = 0; i < palabraOc.length; i++) {
@@ -260,7 +280,7 @@ function creoCanvas() {
 
 }
 
-function eliminoCanvasImg(){
+function eliminoCanvasImg() {
     document.getElementById("imgFelicidades").remove();
 }
 

@@ -1,15 +1,18 @@
-
+*{
+    margin: 0px;
+}
 body{
+    
     font-family: 'Irish Grover', cursive;
     text-align: center;
-    padding: 15px;
+    height: 100%;
+    
 }
 header{
     font-family: 'Irish Grover', cursive;
     background-color: #385c9e;
     border: none;
     color: white;
-    padding: 15px;
     text-align: center;
     text-decoration: none;
     font-size: 80px;
@@ -20,18 +23,15 @@ header{
     text-align: center;
 }
 footer{
-    position: relative;
     background-image: url("images/cielo.png");
     background-repeat: no-repeat;
     background-position-x: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     background-size: 100% 100%;
     border: none;
-    color: white;
-    padding: 15px 15px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 30px;
-    height: 280px;
+    height: 300px;
 }
 h3{
     font-size: 40px;
@@ -40,7 +40,7 @@ input[type="button"] {
     background-color: #385c9e;
     border: none;
     color: white;
-    padding: 5px 5px;
+    height: 40px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -53,7 +53,6 @@ input[type="button"]:hover {
     transition-duration: 0.5s;
     background-color: steelblue;
     color: white;
-    padding: 5px 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -62,23 +61,22 @@ input[type="button"]:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
 }
 input[type="text"] {
-    height: 15px;
     width: 300px;
     background-color: #385c9e;
     border: none;
     color: white;
-    padding: 5px 5px;
+    height: 40px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 25px;
     border-radius: 2.5%;
 }
 button{
     background-color: #385c9e;
     border: none;
     color: white;
-    padding: 5px 5px;
+    height: 40px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -90,7 +88,6 @@ button:hover{
     transition-duration: 0.5s;
     background-color: steelblue;
     color: white;
-    padding: 6px 6px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -99,21 +96,21 @@ button:hover{
     box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
 }
 #sectAdivinar{
-    padding: 15px;
+    padding-top: 15px;
     display: inline-block;
     box-sizing: border-box;
     text-align: left;
     width: 50%;
 }
 #sectCanvas{
-    padding: 15px;
+    padding-top: 15px;
     display: inline-block;
     box-sizing: border-box;
     text-align: right;
     vertical-align: top;  
 }
 #dibujo{
-    padding-top: 10px;
+    
     vertical-align: top;
     display: inline-block;
     box-sizing: border-box;   
@@ -130,7 +127,7 @@ button:hover{
     font-size: 25px;
 }
 #mensaje{
-    padding-top: 10px;
+    
     vertical-align: top;    
     display: inline-block;
     box-sizing: border-box;
@@ -139,4 +136,28 @@ button:hover{
     border: 2px solid steelblue;
     width: 450px;
     height: 350px;
+}
+#corazoncito0{
+    width: 30px;
+    height: 30px;
+}
+#corazoncito1{
+    width: 30px;
+    height: 30px;
+}
+#corazoncito2{
+    width: 30px;
+    height: 30px;
+}
+#corazoncito3{
+    width: 30px;
+    height: 30px;
+}
+#corazoncito4{
+    width: 30px;
+    height: 30px;
+}
+#corazoncito5{
+    width: 30px;
+    height: 30px;
 }
