@@ -72,7 +72,38 @@ input[type="text"] {
     font-size: 25px;
     border-radius: 2.5%;
 }
-button{
+.abc{
+    background-color: #385c9e;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin: 1px 1px;
+}
+  .abc:disabled {
+    background-color: tomato;
+  }
+
+  .abc:hover{
+    cursor: pointer;
+    transition-duration: 0.5s;
+    background-color: tomato;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transform: translateY(-0.3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
+}
+
+.btn{
     background-color: #385c9e;
     border: none;
     color: white;
@@ -83,7 +114,7 @@ button{
     font-size: 16px;
     border-radius: 10%;
 }
-button:hover{
+.btn:hover{
     cursor: pointer;
     transition-duration: 0.5s;
     background-color: steelblue;

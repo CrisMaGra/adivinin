@@ -170,6 +170,7 @@ function siguienteBoton() {
     let textoBoton = document.createTextNode("SIGUIENTE");
     botonSiguiente.appendChild(textoBoton);
     botonSiguiente.setAttribute("id", "siguiente");
+    botonSiguiente.setAttribute("class", "btn");
     botonSiguiente.setAttribute("onclick", "limpiar()");
     document.getElementById("divBotones").appendChild(botonSiguiente);
     bandera++;
@@ -371,6 +372,7 @@ function teclas() {
         let textoTecla = document.createTextNode(char);
         teclado.appendChild(textoTecla);
         teclado.setAttribute("id", "tecla-" + char);
+        teclado.setAttribute("class", "abc");
         teclado.setAttribute("onclick", "escribeLetra('" + char + "')");
         document.getElementById("teclasABC").appendChild(teclado);
     }
@@ -381,7 +383,7 @@ function teclas() {
         let textoTecla = document.createTextNode(char);
         teclado.appendChild(textoTecla);
         teclado.setAttribute("id", "tecla-" + char);
-
+        teclado.setAttribute("class", "abc");
         teclado.setAttribute("onclick", "escribeLetra('" + char + "')");
         document.getElementById("teclasABC").appendChild(teclado);
     }
@@ -393,6 +395,7 @@ function teclaEnie() {
     let textoTeclaEnie = document.createTextNode(letraEnie);
     tecladoEnie.appendChild(textoTeclaEnie);
     tecladoEnie.setAttribute("id", "tecla-" + letraEnie);
+    tecladoEnie.setAttribute("class", "abc");
     tecladoEnie.setAttribute("onclick", "escribeLetra('Ñ')");
     document.getElementById("teclasABC").appendChild(tecladoEnie);
 }
