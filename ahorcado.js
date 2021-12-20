@@ -9,6 +9,8 @@ let palabraAdi = "";
 let bandera = 1;
 
 (function atento() {
+    iniciar();
+    teclas();
     document.getElementById("botonComprobar").addEventListener("click", comprobar);
     document.getElementById("letra").addEventListener("keydown", pressEnter);
 })();
@@ -123,12 +125,11 @@ function comprobar() {
             }
             if (nuevo == palabraAdi) { //Resta vida y dibuja.
                 vidas--;
-                elimLife();
+                restoLife();
                 document.getElementById("vida").innerHTML = "Vidas: " + vidas;
                 dibujar();
                 document.getElementById("letra").focus();
             }
-    
             palabraAdi = nuevo;
             document.getElementById("frase").innerHTML = palabraAdi;
             if (vidas == 0) {
@@ -143,7 +144,6 @@ function comprobar() {
         }
     }
     document.getElementById("letra").value = "";
-    document.getElementById("siguiente").focus();
 }
 
 function life() {
@@ -155,8 +155,14 @@ function life() {
     }
 }
 
-function elimLife() {
+function restoLife() {
     document.getElementById("corazoncito" + [vidas]).remove();
+} 
+
+function eliminoCorazoncitos(){
+    for (let i = 0; i < vidas; i++) {
+        document.getElementById("corazoncito" + [i]).remove();
+    }
 }
 
 function siguienteBoton() {
@@ -172,6 +178,8 @@ function siguienteBoton() {
 
 function limpiar() {
     eliminoCanvasImg()
+    creoCanvas();
+    eliminoCorazoncitos();
     document.getElementById("siguiente").remove();
     document.getElementById("frase").innerHTML = "";
     document.getElementById("mensaje").innerHTML = "";
@@ -187,7 +195,6 @@ function limpiar() {
     } else if (bandera == 5) {
         lvl5(vidas = 6);
     }
-    creoCanvas();
 }
 
 function felicidades() {
@@ -209,9 +216,9 @@ function perdiste() {
 }
 
 function iniciar() {
+    life();
     document.getElementById("letra").focus();
     document.getElementById("vida").innerHTML = "Vidas: " + vidas;
-    life();
     let indiceAleatorio = Math.floor(Math.random() * palabras.length)
     palabraOc = palabras[indiceAleatorio];
     for (let i = 0; i < palabraOc.length; i++) {
@@ -222,6 +229,8 @@ function iniciar() {
 }
 
 function lvl2() {
+    life();
+    habilitarLetras();
     document.getElementById("letra").focus();
     document.getElementById("titulo").innerHTML = "ADIVININ NIVEL 2";
     document.getElementById("vida").innerHTML = "Vidas: " + vidas;
@@ -235,6 +244,8 @@ function lvl2() {
 }
 
 function lvl3() {
+    life();
+    habilitarLetras();
     document.getElementById("letra").focus();
     document.getElementById("titulo").innerHTML = "ADIVININ NIVEL 3";
     document.getElementById("vida").innerHTML = "Vidas: " + vidas;
@@ -248,6 +259,8 @@ function lvl3() {
 }
 
 function lvl4() {
+    life();
+    habilitarLetras();
     document.getElementById("letra").focus();
     document.getElementById("titulo").innerHTML = "ADIVININ NIVEL 4";
     document.getElementById("vida").innerHTML = "Vidas: " + vidas;
@@ -261,6 +274,8 @@ function lvl4() {
 }
 
 function lvl5() {
+    life();
+    habilitarLetras();
     document.getElementById("letra").focus();
     document.getElementById("titulo").innerHTML = "ADIVININ NIVEL 5";
     document.getElementById("vida").innerHTML = "Vidas: " + vidas;
@@ -344,4 +359,61 @@ function dibujar() {
             ctx.stroke();
         }
     }
+}
+
+function teclas() {
+    let a = 65;
+    let n = 79;
+    let z = 91;
+    for (let i = a; i < n; i++) {
+        let char = String.fromCharCode([i]);
+        let teclado = document.createElement("button");
+        let textoTecla = document.createTextNode(char);
+        teclado.appendChild(textoTecla);
+        teclado.setAttribute("id", "tecla-" + char);
+        teclado.setAttribute("onclick", "escribeLetra('" + char + "')");
+        document.getElementById("teclasABC").appendChild(teclado);
+    }
+    teclaEnie();
+    for (let i = n; i < z; i++) {
+        let char = String.fromCharCode([i]);
+        let teclado = document.createElement("button");
+        let textoTecla = document.createTextNode(char);
+        teclado.appendChild(textoTecla);
+        teclado.setAttribute("id", "tecla-" + char);
+
+        teclado.setAttribute("onclick", "escribeLetra('" + char + "')");
+        document.getElementById("teclasABC").appendChild(teclado);
+    }
+}
+
+function teclaEnie() {
+    let letraEnie = "Ñ";
+    let tecladoEnie = document.createElement("button");
+    let textoTeclaEnie = document.createTextNode(letraEnie);
+    tecladoEnie.appendChild(textoTeclaEnie);
+    tecladoEnie.setAttribute("id", "tecla-" + letraEnie);
+    tecladoEnie.setAttribute("onclick", "escribeLetra('Ñ')");
+    document.getElementById("teclasABC").appendChild(tecladoEnie);
+}
+
+function escribeLetra(_Letra) {
+    document.getElementById("letra").value = _Letra;
+    comprobar();
+    anularABC(_Letra);
+}
+
+function anularABC(_Letra) {
+    let button = document.getElementById("tecla-" + _Letra);
+    button.disabled = true;
+}
+
+function habilitarLetras(){
+    for (let i = 65; i < 91; i++) {
+        let char = String.fromCharCode([i]);
+        let button = document.getElementById("tecla-" + char);
+        button.disabled = false; 
+    }
+    let buttonEnie = document.getElementById("tecla-Ñ");
+    buttonEnie.disabled = false;
 }
