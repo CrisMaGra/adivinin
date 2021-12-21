@@ -211,6 +211,7 @@ function perdiste() {
     let botonNuevo = document.createElement("button");
     let textoNuevo = document.createTextNode("NUEVO JUEGO");
     botonNuevo.setAttribute("id", "nuevo");
+    botonNuevo.setAttribute("class", "btn");
     botonNuevo.appendChild(textoNuevo);
     document.getElementById("divBotones").appendChild(botonNuevo);
     botonNuevo.setAttribute("onclick", "location.href='Index.html'");
@@ -363,10 +364,7 @@ function dibujar() {
 }
 
 function teclas() {
-    let a = 65;
-    let n = 79;
-    let z = 91;
-    for (let i = a; i < n; i++) {
+    for (let i = 65; i < 74; i++) {
         let char = String.fromCharCode([i]);
         let teclado = document.createElement("button");
         let textoTecla = document.createTextNode(char);
@@ -376,8 +374,7 @@ function teclas() {
         teclado.setAttribute("onclick", "escribeLetra('" + char + "')");
         document.getElementById("teclasABC").appendChild(teclado);
     }
-    teclaEnie();
-    for (let i = n; i < z; i++) {
+    for (let i = 74; i < 79; i++) {
         let char = String.fromCharCode([i]);
         let teclado = document.createElement("button");
         let textoTecla = document.createTextNode(char);
@@ -385,7 +382,28 @@ function teclas() {
         teclado.setAttribute("id", "tecla-" + char);
         teclado.setAttribute("class", "abc");
         teclado.setAttribute("onclick", "escribeLetra('" + char + "')");
-        document.getElementById("teclasABC").appendChild(teclado);
+        document.getElementById("teclasABC2").appendChild(teclado);
+    }
+    teclaEnie();
+    for (let i = 79; i < 82; i++) {
+        let char = String.fromCharCode([i]);
+        let teclado = document.createElement("button");
+        let textoTecla = document.createTextNode(char);
+        teclado.appendChild(textoTecla);
+        teclado.setAttribute("id", "tecla-" + char);
+        teclado.setAttribute("class", "abc");
+        teclado.setAttribute("onclick", "escribeLetra('" + char + "')");
+        document.getElementById("teclasABC2").appendChild(teclado);
+    }
+    for (let i = 82; i < 91; i++) {
+        let char = String.fromCharCode([i]);
+        let teclado = document.createElement("button");
+        let textoTecla = document.createTextNode(char);
+        teclado.appendChild(textoTecla);
+        teclado.setAttribute("id", "tecla-" + char);
+        teclado.setAttribute("class", "abc");
+        teclado.setAttribute("onclick", "escribeLetra('" + char + "')");
+        document.getElementById("teclasABC3").appendChild(teclado);
     }
 }
 
@@ -397,7 +415,7 @@ function teclaEnie() {
     tecladoEnie.setAttribute("id", "tecla-" + letraEnie);
     tecladoEnie.setAttribute("class", "abc");
     tecladoEnie.setAttribute("onclick", "escribeLetra('Ñ')");
-    document.getElementById("teclasABC").appendChild(tecladoEnie);
+    document.getElementById("teclasABC2").appendChild(tecladoEnie);
 }
 
 function escribeLetra(_Letra) {

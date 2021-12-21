@@ -2,11 +2,10 @@
     margin: 0px;
 }
 body{
-    
     font-family: 'Irish Grover', cursive;
     text-align: center;
-    height: 100%;
-    
+    height: 70%;
+    width: 100%;   
 }
 header{
     font-family: 'Irish Grover', cursive;
@@ -16,11 +15,16 @@ header{
     text-align: center;
     text-decoration: none;
     font-size: 80px;
-    height: 120px;
+    height: 10%;
+    width: 100%;
 }
-#general{
-    height: 450px;
-    text-align: center;
+body::-webkit-scrollbar{
+    width: 10px;
+    background-color: steelblue;
+}
+body::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: rgb(3, 47, 97);
 }
 footer{
     background-image: url("images/cielo.png");
@@ -31,10 +35,10 @@ footer{
     width: 100%;
     background-size: 100% 100%;
     border: none;
-    height: 300px;
+    height: 18%;
 }
-h3{
-    font-size: 40px;
+h1{
+    font-size:xx-large;
 }
 input[type="button"] {
     background-color: #385c9e;
@@ -61,7 +65,7 @@ input[type="button"]:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
 }
 input[type="text"] {
-    width: 300px;
+    min-width: 150px;
     background-color: #385c9e;
     border: none;
     color: white;
@@ -86,11 +90,10 @@ input[type="text"] {
     height: 30px;
     margin: 1px 1px;
 }
-  .abc:disabled {
+.abc:disabled {
     background-color: tomato;
-  }
-
-  .abc:hover{
+}
+.abc:hover{
     cursor: pointer;
     transition-duration: 0.5s;
     background-color: tomato;
@@ -102,7 +105,6 @@ input[type="text"] {
     transform: translateY(-0.3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
 }
-
 .btn{
     background-color: #385c9e;
     border: none;
@@ -127,68 +129,90 @@ input[type="text"] {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
 }
 #sectAdivinar{
+    width: 40%;
     padding-top: 15px;
     display: inline-block;
     box-sizing: border-box;
     text-align: left;
-    width: 50%;
+    vertical-align: top;
 }
 #sectCanvas{
+    width: 45%;
     padding-top: 15px;
     display: inline-block;
     box-sizing: border-box;
-    text-align: right;
-    vertical-align: top;  
+    vertical-align: top;   
+    
 }
 #dibujo{
-    
     vertical-align: top;
     display: inline-block;
     box-sizing: border-box;   
 }
 #elCanvas{
+    height: 300px;
+    width: 500px;
+    min-height: 150px;
+    min-width: 200px;
     border: 2px solid steelblue;
-    width: 450px;
-    height: 350px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: inline-block;
 }
 #frase{
-    font-size: 30px;
+    font-size: 22px;   
 }
 #pista{
-    font-size: 25px;
+    font-size: 22px;
 }
-#mensaje{
-    
+#mensaje{ 
     vertical-align: top;    
     display: inline-block;
     box-sizing: border-box;
 }
 #imgFelicidades{
+    height: 300px;
+    width: 500px;
+    min-height: 150px;
+    min-width: 200px;
     border: 2px solid steelblue;
-    width: 450px;
-    height: 350px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: inline-block;
 }
 #corazoncito0{
     width: 30px;
     height: 30px;
+    min-width: 15px;
+    min-height: 15px;
 }
 #corazoncito1{
     width: 30px;
     height: 30px;
+    min-width: 15px;
+    min-height: 15px;
 }
 #corazoncito2{
     width: 30px;
     height: 30px;
+    min-width: 15px;
+    min-height: 15px;
 }
 #corazoncito3{
     width: 30px;
     height: 30px;
+    min-width: 15px;
+    min-height: 15px;
 }
 #corazoncito4{
     width: 30px;
     height: 30px;
+    min-width: 15px;
+    min-height: 15px;
 }
 #corazoncito5{
     width: 30px;
     height: 30px;
+    min-width: 15px;
+    min-height: 15px;
 }
