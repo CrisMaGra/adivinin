@@ -4,8 +4,13 @@
 body{
     font-family: 'Irish Grover', cursive;
     text-align: center;
-    height: 70%;
+    height: 80%;
     width: 100%;   
+    background-image: url("images/cielo.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: 100% 100%;
+    height: 800px;
 }
 header{
     font-family: 'Irish Grover', cursive;
@@ -27,9 +32,7 @@ body::-webkit-scrollbar-thumb{
     background-color: rgb(3, 47, 97);
 }
 footer{
-    background-image: url("images/cielo.png");
-    background-repeat: no-repeat;
-    background-position-x: center;
+    background-color: #385c9e;
     position: fixed;
     bottom: 0;
     width: 100%;
