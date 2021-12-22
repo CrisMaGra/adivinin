@@ -4,6 +4,8 @@ let palabras2 = Array("AVION", "SUPERMERCADO", "CAFETERA", "PUERTA");
 let palabras3 = Array("ESTUFA", "SILLA", "BARCO", "LLUVIA");
 let palabras4 = Array("CAMA", "LAMPARA", "TAZA", "CUADRO", "BICICLETA");
 let palabras5 = Array("RECREO", "MOCHILA", "CARTUCHERA", "CARPETA", "REGLA");
+let palabras6 = Array("MANGUERA", "BALDE", "ESCOBA", "TRAPO", "CEPILLO");
+let palabras7 = Array("ARBOL", "PLANTAS", "FLORES", "RIO", "MAR");
 let palabraOc = "";
 let palabraAdi = "";
 let bandera = 1;
@@ -24,6 +26,36 @@ function pressEnter(event) {
 
 function pistas(pista) {
     switch (pista) {
+        case "MAR":
+            document.getElementById("pista").innerHTML = "Mucha agua tendrá, si lo pruebas salado será.";
+            break;
+        case "RIO":
+            document.getElementById("pista").innerHTML = "Algunos son claros y otros oscuros, en él corre mucha agua.";
+            break;
+        case "FLORES":
+            document.getElementById("pista").innerHTML = "Tus plantas decorarán, lindos colores en primavera saldrán, y perfume tendrán.";
+            break;
+        case "PLANTAS":
+            document.getElementById("pista").innerHTML = "En tus macetas estarán, algunas tienen flores y otras no.";
+            break;
+        case "ARBOL":
+            document.getElementById("pista").innerHTML = "Puede ser grande o pequeño, siempre sombra te dará, aunque en otoño sus hojas caerán.";
+            break;
+        case "CEPILLO":
+            document.getElementById("pista").innerHTML = "Sirve para limpiar los dientes.";
+            break;
+        case "TRAPO":
+            document.getElementById("pista").innerHTML = "Se moja primero para pasarlo luego por el piso, y con él puedes limpiar tu casa.";
+            break;
+        case "ESCOBA":
+            document.getElementById("pista").innerHTML = "Con ella barres todo el piso.";
+            break;
+        case "BALDE":
+            document.getElementById("pista").innerHTML = "Puedes cargarlo de agua, y sujetarlo de su manija, él no tiene tapa.";
+            break;
+        case "MANGUERA":
+            document.getElementById("pista").innerHTML = "Dentro de ella puede pasar agua, y algunas son muy largas.";
+            break;
         case "REGLA":
             document.getElementById("pista").innerHTML = "Mide lo que quieras, aunque pocos centímetros, para trazar líneas en tus hojas también sirve.";
             break;
@@ -107,8 +139,9 @@ function pistas(pista) {
 }
 
 function comprobar() {
-    document.getElementById("letra").focus();
+    //document.getElementById("letra").focus();
     let letra = document.getElementById("letra").value.toUpperCase().trim();
+    pintoLetra();
     if (letra != "") {
         if (letra == palabraOc) {
             document.getElementById("frase").innerHTML = palabraOc;
@@ -146,6 +179,16 @@ function comprobar() {
     document.getElementById("letra").value = "";
 }
 
+function pintoLetra(){
+    let letra = document.getElementById("letra").value.toUpperCase().trim();
+    if (letra.length < 2) {
+        for(i = 0; i < letra.length; i++){ //Anula del teclado virtual las letras que ingreso en el input
+            let letraOc = letra.charAt([i]);
+            anularABC(letraOc);
+        }
+    }
+}
+
 function life() {
     for (let index = 0; index < vidas; index++) {
         corazon = document.createElement("img");
@@ -166,6 +209,7 @@ function eliminoCorazoncitos(){
 }
 
 function siguienteBoton() {
+    
     let botonSiguiente = document.createElement("button");
     let textoBoton = document.createTextNode("SIGUIENTE");
     botonSiguiente.appendChild(textoBoton);
@@ -175,6 +219,7 @@ function siguienteBoton() {
     document.getElementById("divBotones").appendChild(botonSiguiente);
     bandera++;
     eliminoCanvas();
+    document.getElementById("siguiente").focus()
 }
 
 function limpiar() {
@@ -214,7 +259,7 @@ function perdiste() {
     botonNuevo.setAttribute("class", "btn");
     botonNuevo.appendChild(textoNuevo);
     document.getElementById("divBotones").appendChild(botonNuevo);
-    botonNuevo.setAttribute("onclick", "location.href='Index.html'");
+    botonNuevo.setAttribute("onclick", "location.href='index.html'");
 }
 
 function iniciar() {
@@ -283,6 +328,36 @@ function lvl5() {
     document.getElementById("vida").innerHTML = "Vidas: " + vidas;
     let indiceAleatorio = Math.floor(Math.random() * palabras5.length)
     palabraOc = palabras5[indiceAleatorio];
+    for (let i = 0; i < palabraOc.length; i++) {
+        palabraAdi = palabraAdi + "_ ";
+    }
+    document.getElementById("frase").innerHTML = palabraAdi;
+    pistas(palabraOc);
+}
+
+function lvl6() {
+    life();
+    habilitarLetras();
+    document.getElementById("letra").focus();
+    document.getElementById("titulo").innerHTML = "ADIVININ NIVEL 6";
+    document.getElementById("vida").innerHTML = "Vidas: " + vidas;
+    let indiceAleatorio = Math.floor(Math.random() * palabras6.length)
+    palabraOc = palabras6[indiceAleatorio];
+    for (let i = 0; i < palabraOc.length; i++) {
+        palabraAdi = palabraAdi + "_ ";
+    }
+    document.getElementById("frase").innerHTML = palabraAdi;
+    pistas(palabraOc);
+}
+
+function lvl7() {
+    life();
+    habilitarLetras();
+    document.getElementById("letra").focus();
+    document.getElementById("titulo").innerHTML = "ADIVININ NIVEL 7";
+    document.getElementById("vida").innerHTML = "Vidas: " + vidas;
+    let indiceAleatorio = Math.floor(Math.random() * palabras7.length)
+    palabraOc = palabras7[indiceAleatorio];
     for (let i = 0; i < palabraOc.length; i++) {
         palabraAdi = palabraAdi + "_ ";
     }
