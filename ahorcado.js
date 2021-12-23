@@ -193,6 +193,7 @@ function life() {
     for (let index = 0; index < vidas; index++) {
         corazon = document.createElement("img");
         corazon.setAttribute("id", "corazoncito" + [index]);
+        corazon.setAttribute("class", "corazoncitos");
         corazon.src = "images/corazon.png";
         document.getElementById("lifes").appendChild(corazon);
     }
