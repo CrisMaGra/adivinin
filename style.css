@@ -15,15 +15,8 @@ header{
 body{
     font-family: 'Irish Grover', cursive;
     text-align: center;  
-    background-image: url("images/cielo.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
     overflow: auto;
-    height: 850px;
-}
-body img{
-    object-fit: cover;
+    background-color: #7fad70;
 }
 body::-webkit-scrollbar{
     width: 10px;
@@ -32,6 +25,16 @@ body::-webkit-scrollbar{
 body::-webkit-scrollbar-thumb{
     border-radius: 5px;
     background-color: rgb(3, 47, 97);
+}
+#general{
+    height: 700px;
+    background-image: url("images/cielo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+#general background-img{ 
+    object-fit: cover;
 }
 footer{
     background-color: #385c9e;
@@ -90,9 +93,9 @@ input[type="text"] {
     font-size: 2vmin;
     border-radius: 10%;
     cursor: pointer;
-    width: 3.8vmin;
-    height: 3.8vmin;
-    margin: 1px 1px;
+    width: 5vmin;
+    height: 5vmin;
+    margin: 2px 2px;
 }
 .abc:disabled {
     background-color: tomato;
@@ -143,8 +146,7 @@ input[type="text"] {
     padding-top: 15px;
     display: inline-block;
     box-sizing: border-box;
-    vertical-align: top;   
-    
+    vertical-align: top;      
 }
 #dibujo{
     vertical-align: top;
@@ -160,10 +162,10 @@ input[type="text"] {
     display: inline-block;
 }
 #frase{
-    font-size: 3.2vmin;   
+    font-size: 3.5vmin;   
 }
 #pista{
-    font-size: 3.2vmin;
+    font-size: 3.5vmin;
 }
 #mensaje{ 
     vertical-align: top;    
@@ -184,4 +186,53 @@ input[type="text"] {
     object-fit: cover;
     width: 5.9vmin;
     height: 5.2vmin;
+    padding: 0%;
+}
+@media only screen and (max-width: 1024px) {
+    #sectCanvas{
+        display: block;
+        width: 100%;
+        padding: 0px;
+    }
+    #sectAdivinar{
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-top: 2%;  
+    }
+    footer{
+        height: 4vmin;
+    }
+}
+@media only screen and (max-width: 450px) {
+    #pista{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+        padding: 0px 8px 0px 8px;
+        text-align: justify;
+    }
+    h1{
+        font-family: 'Courier New', Courier, monospace;
+        font: bold;
+        font-size: 18px;
+    }
+    .abc{
+        font-size: 12px;
+        width: 7vmin;
+        height: 7vmin;
+        margin: 1px 1px;   
+    }
+    .corazoncitos{
+        object-fit: cover;
+        width: 8.6vmin;
+        height: 7.9vmin;
+    }
+    #letra{
+        width: 50vmin;
+        font-size: 15px;
+    }
+    #botonComprobar{
+        width: 30vmin;
+        font-size: 12px;
+    }
 }
