@@ -27,7 +27,8 @@ body::-webkit-scrollbar-thumb{
     background-color: rgb(3, 47, 97);
 }
 #general{
-    height: 700px;
+    max-height: 1100px;
+    min-height: 800px;
     background-image: url("images/cielo.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -35,6 +36,8 @@ body::-webkit-scrollbar-thumb{
 }
 #general background-img{ 
     object-fit: cover;
+    min-height: 600px;
+    max-height: 1100px;
 }
 footer{
     background-color: #385c9e;
@@ -43,7 +46,7 @@ footer{
     width: 100%;
     background-size: 100% 100%;
     border: none;
-    height: 15vmin;
+    height: 10vmin;
 }
 h1{
     font-size: 4vmin;
@@ -138,7 +141,7 @@ input[type="text"] {
     padding-top: 15px;
     display: inline-block;
     box-sizing: border-box;
-    text-align: left;
+    text-align: center;
     vertical-align: top;
 }
 #sectCanvas{
@@ -197,12 +200,9 @@ input[type="text"] {
     #sectAdivinar{
         display: block;
         width: 100%;
-        text-align: center;
         padding-top: 2%;  
     }
-    footer{
-        height: 4vmin;
-    }
+    
 }
 @media only screen and (max-width: 450px) {
     #pista{
