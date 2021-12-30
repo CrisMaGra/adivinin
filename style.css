@@ -13,6 +13,7 @@ header{
     width: 100%;
 }
 body{
+    height: 60vmax;
     font-family: 'Irish Grover', cursive;
     text-align: center;  
     overflow: auto;
@@ -224,7 +225,7 @@ input[type="text"] {
     }
     .corazoncitos{
         object-fit: cover;
-        width: 8.6vmin;
+        width: 9.2vmin;
         height: 7.9vmin;
     }
     #letra{
